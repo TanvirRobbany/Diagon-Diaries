@@ -9,6 +9,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  /* color: white; */
   /* background: rgb(155, 155, 156); */
   /* background: linear-gradient(
     90deg,

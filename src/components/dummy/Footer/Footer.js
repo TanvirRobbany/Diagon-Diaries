@@ -26,7 +26,7 @@ export default function SimplePaper() {
     //   </Paper>
     // </div>
     <footer class='page-footer black' id='democss'>
-      <div class='container'>
+      {/* <div class='container'>
         <div class='row'>
           <div class='col l6 s12'>
             <h5 class='white-text'>Footer Content</h5>
@@ -60,13 +60,13 @@ export default function SimplePaper() {
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
       <div class='footer-copyright'>
         <div class='container'>
-          © 2014 Copyright Text
-          <a class='grey-text text-lighten-4 right' href='#!'>
+          This project is developed by team "RAVENCLAW" © 2020
+          {/* <a class='grey-text text-lighten-4 right' href='#!'>
             More Links
-          </a>
+          </a> */}
         </div>
       </div>
     </footer>

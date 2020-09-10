@@ -12,10 +12,10 @@ import AboutUs from "./components/dummy/About/AboutUs";
 function App() {
   return (
     <Router>
-      <div className='App '>
+      <div className='App'>
         <Home />
         <Navbar />
-        <div className='home'>
+        <div classname="home">
           <Switch>
             <Route exact path='/' component={HomeText} />
             <Route exact path='/aboutus' component={AboutUs} />
