@@ -1,0 +1,22 @@
+.root {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* .footer {
+    margin-top: 1.5%;
+    width: 90%;
+    height: 5%;
+    background: rgba(196, 196, 196, 0.25);
+  } */
+  .text {
+    display: flex;
+    font-family: 'Playfair Display';
+    font-size: 4em;
+    justify-content: center;
+  }
+  @media screen and (max-width: 480px) {
+    .text {
+      font-size: 16px;
+    }
+  }

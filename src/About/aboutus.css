@@ -1,0 +1,56 @@
+.about{
+    /* height: 100%; */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.profile{
+    height: fit-content;
+    width: 25%;
+    font-family: 'Playfair Display';
+    font-size: 0.8em;
+    border-radius: 10px;
+    background-color: rgba(196, 196, 196, 0.25);
+}
+
+img{
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 480px) {
+    .about {
+        height: fit-content;
+      flex-direction: column;
+    }
+    .profile {
+      width: 90%;
+      margin-bottom: 2rem;
+    }
+    .text{
+        font-size: 16px;
+    }
+    img{
+        width: 100px;
+        height: 75px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .about {
+        height: fit-content;
+      flex-direction: column;
+    }
+    .profile {
+      width: 90%;
+      margin-bottom: 2rem;
+    }
+    .text{
+        font-size: 16px;
+    }
+    img{
+        width: 100px;
+        height: 75px;
+    }
+  }

@@ -1,0 +1,16 @@
+.navbar{
+    width: 100%;
+    background: #C4C4C4;
+    opacity: 0.4;
+    display: flex;
+    text-decoration: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Playfair Dsplay';
+    font-size: 2em;
+}
+
+ul li{
+    text-decoration: none;
+}
