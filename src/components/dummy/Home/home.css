@@ -1,4 +1,4 @@
-.header{
+/* .header{
     margin: 0;
     margin-bottom: 2%;
     color: white;
@@ -21,4 +21,12 @@
     .text {
         font-size: 16px;
     }
-  }
+  } */
+.home {
+  width: 100%;
+  /* height: 70vh; */
+  color: white;
+
+  font-size: 1.7em;
+  margin-top: 2%;
+}

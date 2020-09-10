@@ -2,60 +2,15 @@
   height: 100vh;
   width: 100%;
   text-align: center;
-  font-family: 'Playfair Display';
-  background: url("./Picture/bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  font-family: "Playfair Display";
+
+  /* background-position: center center; */
   /* background-attachment: scroll; */
 }
 
-.home{
-  width: 100%;
-  height: 70vh;
-  color: white;
-  font-family: 'Playfair Display';
-  font-size: 1.7em;
-  margin-top: 2%;
-  display: flex;
+.home {
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-@media screen and (max-width: 480px) {
-  .App {
-    height: auto;
-    width: 100%;
-    text-align: center;
-    font-family: 'Playfair Display';
-    background: #ffffff;
-    /*background: url("./Picture/bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: scroll; */
-  }
-  .home{
-    height: fit-content;
-    color: black;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .App {
-    height: auto;
-    width: 100%;
-    text-align: center;
-    font-family: 'Playfair Display';
-    background: #ffffff;
-    /*background: url("./Picture/bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: scroll; */
-  }
-  .home{
-    height: fit-content;
-    color: black;
-  }
+  align-items: center; */
+  flex: 1 0 auto;
 }
