@@ -3,21 +3,23 @@ import React from "react";
 
 const Login = () => {
   return (
-    <div class='row'>
-      <form class='col s12'>
-        <div class='row'>
-          <div class='input-field col s6'>
-            <input id='input_text' type='text' />
-            <label for='input_text'>Input text</label>
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <div class='row'>
+        <form class='col s12'>
+          <div class='row'>
+            <div class='input-field col s6'>
+              <input id='name' type='text' />
+              <label for='name'>Name</label>
+            </div>
           </div>
-        </div>
-        <div class='row'>
-          <div class='input-field col s6'>
-            <input id='input_text' type='text' />
-            <label for='input_text'>Input text</label>
+          <div class='row'>
+            <div class='input-field col s6'>
+              <input id='pass' type='text' />
+              <label for='pass'>Password</label>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };
