@@ -8,6 +8,7 @@ import HomeText from "./components/dummy/Home/HomeText";
 import Footer from "./components/dummy/Footer/Footer";
 import Login from "./components/container/Login/Login";
 import AboutUs from "./components/dummy/About/AboutUs";
+import Register from "./components/container/Register/Register";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={HomeText} />
             <Route exact path='/aboutus' component={AboutUs} />
+            <Route exact path='/register' component={Register} />
             <Route exact path='/login' component={Login} />
           </Switch>
           {/* <HomeText/> */}

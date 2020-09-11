@@ -22,11 +22,11 @@
   } */
 
 #democss {
-  margin-top: 30rem;
+  margin-top: 36rem;
 }
 
 @media screen and (max-width: 480px) {
   #democss {
-    margin-top: 0rem;
+    margin-top: 7rem;
   }
 }
