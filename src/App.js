@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
@@ -12,24 +12,28 @@ import Register from "./components/container/Register/Register";
 import AdminPanel from "./components/container/Admin/AdminPanel";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
     <Router>
-      <div className='App'>
-        <Home />
-        <Navbar />
-        <div classname="home">
-          <Switch>
-            <Route exact path='/' component={HomeText} />
-            <Route exact path='/aboutus' component={AboutUs} />
-            <Route exact path='/register' component={Register} />
-            <Route exact path='/login' component={Login} />
-          </Switch>
-          {/* <HomeText/> */}
-          {/* <Login/> */}
-          <Footer />
+      {isLoggedIn ? (
+        <div>Admin Things</div>
+      ) : (
+        <div className='App'>
+          <Home />
+          <Navbar />
+          <div classname='home'>
+            <Switch>
+              <Route exact path='/' component={HomeText} />
+              <Route exact path='/aboutus' component={AboutUs} />
+              <Route exact path='/register' component={Register} />
+              <Route exact path='/login' component={Login} />
+            </Switch>
+            {/* <HomeText/> */}
+            {/* <Login/> */}
+            <Footer />
+          </div>
         </div>
-        <Route exact path="/adminpanel" component={AdminPanel} />
-      </div>
+      )}
     </Router>
   );
 }
