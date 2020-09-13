@@ -9,6 +9,7 @@ import Footer from "./components/dummy/Footer/Footer";
 import Login from "./components/container/Login/Login";
 import AboutUs from "./components/dummy/About/AboutUs";
 import Register from "./components/container/Register/Register";
+import AdminPanel from "./components/container/Admin/AdminPanel";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           {/* <Login/> */}
           <Footer />
         </div>
+        <Route exact path="/adminpanel" component={AdminPanel} />
       </div>
     </Router>
   );

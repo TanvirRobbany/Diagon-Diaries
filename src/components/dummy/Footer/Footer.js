@@ -1,21 +1,21 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import Paper from "@material-ui/core/Paper";
+// import Typography from "@material-ui/core/Typography";
+// import Paper from "@material-ui/core/Paper";
 
 import "./footer.css";
 
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    marginTop: "1.5%",
-    width: "95%",
-    height: "5%",
-    backgroundColor: "rgba(196, 196, 196, 0.25)",
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   footer: {
+//     marginTop: "1.5%",
+//     width: "95%",
+//     height: "5%",
+//     backgroundColor: "rgba(196, 196, 196, 0.25)",
+//   },
+// }));
 
 export default function SimplePaper() {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     // <div className='root'>
