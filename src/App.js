@@ -12,11 +12,14 @@ import Register from "./components/container/Register/Register";
 import AdminPanel from "./components/container/Admin/AdminPanel";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn] = useState(true);
+  const [isLoggedInAdmin] = useState(false);
   return (
     <Router>
-      {isLoggedIn ? (
+      {isLoggedInAdmin ? (
         <div>Admin Things</div>
+      ) : isLoggedIn ? (
+        <div>User Things</div>
       ) : (
         <div className='App'>
           <Home />
