@@ -1,5 +1,4 @@
 import React from "react";
-// import "../About/aboutus.css";
 import tanvir from "./Picture/tanvir.jpg";
 import towhid from "./Picture/towhid.jpg";
 import nila from "./Picture/nila.jpg";

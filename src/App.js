@@ -36,8 +36,6 @@ function App() {
                   <Route exact path='/register' component={Register} />
                   <Route exact path='/login' component={Login} />
                 </Switch>
-                {/* <HomeText/> */}
-                {/* <Login/> */}
                 <Footer />
               </div>
             </div>
