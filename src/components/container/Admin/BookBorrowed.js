@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BookBorrowed = () => {
     return (
@@ -15,7 +16,7 @@ const BookBorrowed = () => {
                             <input type="text" id="id" />
                             <label className="black-text" style={{ fontSize: "20px" }} htmlFor="id">ID:</label>
                         </div>
-                        <a class="waves-effect waves-light btn-large green lighten-2" style={{ width: "80%", height: "70%", borderRadius: "10px" }}>Issue Book</a>
+                        <Link class="waves-effect waves-light btn-large green lighten-2" style={{ width: "80%", height: "70%", borderRadius: "10px" }}>Issue Book</Link>
                     </form>
                 </div>
             </div>
@@ -32,6 +33,7 @@ const BookBorrowed = () => {
                         <tr>
                             <th>Book Code</th>
                             <th>Book Name</th>
+                            <th>Fine</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -40,17 +42,8 @@ const BookBorrowed = () => {
                         <tr>
                             <td>B-101</td>
                             <td>Bengali</td>
-                            <td><a className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">add_box</i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Alan</td>
-                            <td>Jellybean</td>
-                            <td>$3.76</td>
-                        </tr>
-                        <tr>
-                            <td>Jonathan</td>
-                            <td>Lollipop</td>
-                            <td>$7.00</td>
+                            <td>50k BDT</td>
+                            <td><Link className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">add_box</i></Link></td>
                         </tr>
                     </tbody>
                 </table>

@@ -1,9 +1,10 @@
-import React from 'react'
-
+import React from 'react';
+import { Link } from 'react-router-dom';
 const AddBook = () => {
     return (
         <div className="container">
             <form action="">
+                <h3>Add New Book</h3>
                 <div className="input-field">
                     <input type="text" id="bookname" />
                     <label className="white-text" style={{ fontSize: "20px" }} htmlFor="bookname">Book Name:</label>
@@ -24,7 +25,7 @@ const AddBook = () => {
                     <input type="text" id="quantity" />
                     <label className="white-text" style={{ fontSize: "20px" }} htmlFor="quantity">Quantity:</label>
                 </div>
-                <a class="waves-effect waves-light btn-large green lighten-2" style={{ width: "40%", height: "70%", borderRadius: "10px" }}>Add Book</a>
+                <Link class="waves-effect waves-light btn-large green lighten-2" style={{ width: "50%", height: "70%", borderRadius: "10px" }}>Add Book</Link>
             </form>
         </div>
     )

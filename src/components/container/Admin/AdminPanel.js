@@ -11,18 +11,18 @@ const AdminPanel = () => {
         <Router>
 
             <Fragment>
-                <div className="container">
-                    <div className="row" style={{ height: "700px" }}>
+                <div className="container" style={{marginBottom: "25px"}}>
+                    <div className="row" style={{ height: "700px",}}>
                         <div className="col s12 m12 l4 grey lighten-2" style={{ height: "100%", borderRadius: "10px", display: "flex", flexDirection: "column", justifyContent: "space-around", alignItems: "center" }}>
                             <h3 >Admin Panel</h3>
-                            <a href="/admindashboard" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px" }}>Dashboard</a>
-                            <a href="/adminaddbook" className="waves-effect waves-light btn-large blue-grey black-text lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px" }}>Add Book</a>
-                            <a href="/admincategories" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", padding: "0px 0px 0px 0px", borderRadius: "10px" }}>Book Categories</a>
-                            <a href="/adminbookborrowed" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px" }}>Book Borrowed</a>
-                            <a className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px" }}>Logout</a>
+                            <Link to="/admindashboard" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px" }}>Dashboard</Link>
+                            <Link to="/adminaddbook" className="waves-effect waves-light btn-large blue-grey black-text lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px" }}>Add Book</Link>
+                            <Link to="/admincategories" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", padding: "0px 0px 0px 0px", borderRadius: "10px" }}>Book Categories</Link>
+                            <Link to="/adminbookborrowed" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px" }}>Book Borrowed</Link>
+                            <Link className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px" }}>Logout</Link>
                         </div>
                         <Switch>
-                            <div className="col s12 m12 l8" style={{ marginTop: "10px" }}>
+                            <div className="col s12 m12 l8" >
                                 <Route exact path="/admindashboard" component={Dashboard} />
                                 <Route exact path="/adminaddbook" component={AddBook} />
                                 <Route exact path="/admincategories" component={Categories} />
