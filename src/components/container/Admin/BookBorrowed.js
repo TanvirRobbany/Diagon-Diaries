@@ -20,7 +20,7 @@ const BookBorrowed = () => {
                     </form>
                 </div>
             </div>
-            <div className="col s12 m12 l7 blue-grey lighten-4" style={{ height: "700px", borderRadius: "10px", overflow: "scroll" }}>
+            <div className="col s12 m12 l7 blue-grey lighten-4" style={{ height: "700px", borderRadius: "10px", overflowY: "scroll" }}>
                 <h3>Issued Book List</h3>
                 <form action="">
                     <div className="input-field">
@@ -33,6 +33,7 @@ const BookBorrowed = () => {
                         <tr>
                             <th>Book Code</th>
                             <th>Book Name</th>
+                            <th>Student ID</th>
                             <th>Fine</th>
                             <th>Action</th>
                         </tr>
@@ -41,8 +42,9 @@ const BookBorrowed = () => {
                     <tbody>
                         <tr>
                             <td>B-101</td>
-                            <td>Bengali</td>
-                            <td>50k BDT</td>
+                            <td>Bengali book with a long Name very long Name very very long nameD</td>
+                            <td>2016100000151</td>
+                            <td>50 BDT</td>
                             <td><Link className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">add_box</i></Link></td>
                         </tr>
                     </tbody>

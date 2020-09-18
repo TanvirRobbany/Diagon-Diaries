@@ -10,10 +10,11 @@ import Login from "./components/container/Login/Login";
 import AboutUs from "./components/dummy/About/AboutUs";
 import Register from "./components/container/Register/Register";
 import AdminPanel from "./components/container/Admin/AdminPanel";
+import UserPanel from "./components/container/User/UserPanel";
 
 function App() {
-  const [isLoggedIn] = useState(false);
-  const [isLoggedInAdmin] = useState(true);
+  const [isLoggedIn] = useState(true);
+  const [isLoggedInAdmin] = useState(false);
   return (
     <Router>
       {isLoggedInAdmin ? (
@@ -22,8 +23,9 @@ function App() {
           <AdminPanel/>
         </div>
       ) : isLoggedIn ? (
-        <div>
-          User Things
+        <div className="App">
+          <Home/>
+          <UserPanel/>
         </div>
       ) : (
             <div className='App'>
