@@ -13,35 +13,35 @@ import AdminPanel from "./components/container/Admin/AdminPanel";
 import UserPanel from "./components/container/User/UserPanel";
 
 function App() {
-  const [isLoggedIn] = useState(true);
-  const [isLoggedInAdmin] = useState(false);
+  const [isLoggedIn] = useState(false);
+  const [isLoggedInAdmin] = useState(true);
   return (
     <Router>
       {isLoggedInAdmin ? (
         <div className='App'>
-          <Home/>
-          <AdminPanel/>
+          <Home />
+          <AdminPanel />
         </div>
       ) : isLoggedIn ? (
-        <div className="App">
-          <Home/>
-          <UserPanel/>
+        <div className='App'>
+          <Home />
+          <UserPanel />
         </div>
       ) : (
-            <div className='App'>
-              <Home />
-              <Navbar />
-              <div classname='home'>
-                <Switch>
-                  <Route exact path='/' component={HomeText} />
-                  <Route exact path='/aboutus' component={AboutUs} />
-                  <Route exact path='/register' component={Register} />
-                  <Route exact path='/login' component={Login} />
-                </Switch>
-                <Footer />
-              </div>
-            </div>
-          )}
+        <div className='App'>
+          <Home />
+          <Navbar />
+          <div classname='home'>
+            <Switch>
+              <Route exact path='/' component={HomeText} />
+              <Route exact path='/aboutus' component={AboutUs} />
+              <Route exact path='/register' component={Register} />
+              <Route exact path='/login' component={Login} />
+            </Switch>
+            <Footer />
+          </div>
+        </div>
+      )}
     </Router>
   );
 }
