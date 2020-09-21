@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Dashboard from './Dashboard';
 import Categories from '../Admin/Categories';
 import BookBorrowed from './BookBorrowed';
-import user from '../../dummy/About/Picture/user.png';
 
 const UserPanel = () => {
     return (

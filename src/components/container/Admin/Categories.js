@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 const Categories = () => {
   return (
     <div style={{ width: "100%", height: "100%" }}>
       <div className='row' style={{ height: "150px" }}>
         <div className='col s12 m6 l4 '>
           <Link
-            className=' waves-light btn-large red darken-1'
+            className='waves-effect waves-light btn-large red darken-1'
             style={{
               width: "100%",
               height: "125px",
