@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BookBorrowed = () => {
+const BookIssued = () => {
     return (
         <div style={{ width: "100%", height: "100%" }}>
             <div className="col s12 m12 l5" style={{ paddingTop: "20%", paddingBottom: "20%", borderRadius: "10px" }}>
@@ -54,4 +54,4 @@ const BookBorrowed = () => {
     )
 }
 
-export default BookBorrowed;
+export default BookIssued;

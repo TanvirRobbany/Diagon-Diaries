@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from './Dashboard';
 import AddBook from './AddBook';
 import Categories from './Categories';
-import BookBorrowed from './BookBorrowed';
+import BookIssued from './BookIssued';
 import { Link } from 'react-router-dom';
 
 const AdminPanel = () => {
@@ -17,7 +17,7 @@ const AdminPanel = () => {
                             <Link to="/admindashboard" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Dashboard</Link>
                             <Link to="/adminaddbook" className="waves-effect waves-light btn-large blue-grey black-text lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Add Book</Link>
                             <Link to="/admincategories" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Book Categories</Link>
-                            <Link to="/adminbookborrowed" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Book Borrowed</Link>
+                            <Link to="/adminbookissued" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Book Borrowed</Link>
                             <Link className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Report</Link>
                             <Link className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Logout</Link>
                         </div>
@@ -26,7 +26,7 @@ const AdminPanel = () => {
                                 <Route exact path="/admindashboard" component={Dashboard} />
                                 <Route exact path="/adminaddbook" component={AddBook} />
                                 <Route exact path="/admincategories" component={Categories} />
-                                <Route exact path="/adminbookborrowed" component={BookBorrowed} />
+                                <Route exact path="/adminbookissued" component={BookIssued} />
                             </div>
                         </Switch>
                     </div>
