@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   return (
@@ -30,7 +31,7 @@ const Register = () => {
             </div>
           </div>
           <div className="row">
-            <a className="waves-effect waves-light btn-large grey"><i className="material-icons">add_circle_outline</i></a>
+            <Link className="waves-effect waves-light btn-large grey"><i className="material-icons">add_circle_outline</i></Link>
           </div>
         </form>
       </div>

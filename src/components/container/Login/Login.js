@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -19,7 +20,7 @@ const Login = () => {
             </div>
           </div>
           <div className="row">
-            <a className="waves-effect waves-light btn-large grey"><i className="material-icons">forward</i></a>
+            <Link className="waves-effect waves-light btn-large grey"><i className="material-icons">forward</i></Link>
           </div>
         </form>
       </div>

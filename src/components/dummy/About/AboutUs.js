@@ -18,6 +18,7 @@ const AboutUs = () => {
             className='activator'
             src={tanvir}
             style={{ width: "354px", height: "250px" }}
+            alt="Hello from Tavir"
           />
         </div>
         <div className='card-content '>
@@ -40,6 +41,7 @@ const AboutUs = () => {
             className='activator'
             src={nila}
             style={{ width: "354px", height: "250px" }}
+            alt="Hello from Nila"
           />
         </div>
         <div className='card-content '>
@@ -62,6 +64,7 @@ const AboutUs = () => {
             className='activator'
             src={towhid}
             style={{ width: "354px", height: "250px" }}
+            alt="Hello from Towhid"
           />
         </div>
         <div className='card-content '>
