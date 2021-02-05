@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const BookTable = () => {
+const BookTableAdmin = () => {
     return (
         <div className="col s12 m12 l12">
             <div style={{ width: "100%", height: "100%" }}>
@@ -39,4 +39,4 @@ const BookTable = () => {
     )
 }
 
-export default BookTable;
+export default BookTableAdmin;

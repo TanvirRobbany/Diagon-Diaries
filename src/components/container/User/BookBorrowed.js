@@ -17,9 +17,9 @@ const BookBorrowed = () => {
                             <th>Book Code</th>
                             <th>Book Name</th>
                             <th>Student ID</th>
-                            <th>Remaining Day(s)</th>
-                            <th>Expired Day(s)</th>
-                            <th>Fine</th>
+                            {/* <th>Remaining Day(s)</th> */}
+                            {/* <th>Expired Day(s)</th> */}
+                            {/* <th>Fine</th> */}
                         </tr>
                     </thead>
 
@@ -28,9 +28,9 @@ const BookBorrowed = () => {
                             <td>B-101</td>
                             <td>Bengali book with a long Name very long Name very very long nameD</td>
                             <td>2016100000151</td>
-                            <td>2</td>
-                            <td>0</td>
-                            <td>50 BDT</td>
+                            {/* <td>2</td> */}
+                            {/* <td>0</td> */}
+                            {/* <td>50 BDT</td> */}
                         </tr>
                     </tbody>
                 </table>

@@ -34,7 +34,7 @@ const BookIssued = () => {
                             <th>Book Code</th>
                             <th>Book Name</th>
                             <th>Student ID</th>
-                            <th>Fine</th>
+                            {/* <th>Fine</th> */}
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -44,7 +44,7 @@ const BookIssued = () => {
                             <td>B-101</td>
                             <td>Bengali book with a long Name very long Name very very long nameD</td>
                             <td>2016100000151</td>
-                            <td>50 BDT</td>
+                            {/* <td>50 BDT</td> */}
                             <td><Link className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">add_box</i></Link></td>
                         </tr>
                     </tbody>

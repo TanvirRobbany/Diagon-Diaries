@@ -2,8 +2,9 @@ import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Dashboard from './Dashboard';
-import Categories from '../Admin/Categories';
+import Categories from './Categories';
 import BookBorrowed from './BookBorrowed';
+// import CategoriesContainer from '../Categories Container/CategoriesContainer';
 
 const UserPanel = () => {
     return (
