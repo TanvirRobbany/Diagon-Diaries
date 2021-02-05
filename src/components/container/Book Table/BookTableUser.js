@@ -24,9 +24,9 @@ const BookTableUser = () => {
 
                         <tbody>
                             <tr>
-                                <td>B-101</td>
-                                <td>Bengali book with a long Name very long Name very very long nameD</td>
-                                <td>2016100000151</td>
+                                <td>CSE-101</td>
+                                <td>Computer Organization And Design</td>
+                                <td>David A. Patterson, John L. Hennessy</td>
                                 {/* <td>50 BDT</td> */}
                                 {/* <td><Link className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">border_color</i></Link><Link className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">delete</i></Link></td> */}
                             </tr>

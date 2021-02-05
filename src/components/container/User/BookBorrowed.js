@@ -25,8 +25,8 @@ const BookBorrowed = () => {
 
                     <tbody>
                         <tr>
-                            <td>B-101</td>
-                            <td>Bengali book with a long Name very long Name very very long nameD</td>
+                            <td>CSE-101</td>
+                            <td>Computer Organization And Design</td>
                             <td>2016100000151</td>
                             {/* <td>2</td> */}
                             {/* <td>0</td> */}
