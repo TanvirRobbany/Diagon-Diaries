@@ -1,19 +1,41 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import M from "materialize-css";
+import { Button } from "@material-ui/core";
+import axios from "axios";
+import { BASE_URL } from "../../../config/config";
 
-const AddBook = () => {
-
+const AddBook = ({isAdmin}) => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(e.target.bookTitle.name,e.target.bookTitle.value);
+        const formData = e.target
+        const book = {
+            bookTitle:formData.bookTitle.value,
+            bookCode:formData.bookCode.value,
+            authorName:formData.authorName.value,
+            category:formData.category.value,
+            quantity:formData.quantity.value
+        }
+        console.log(book);
+        const options = {
+            headers: {
+                Authorization:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAwZjEzNmMyYjY0MDMyNzkwMzJlYjIxIn0sImlhdCI6MTYxMzAwNTE2MSwiZXhwIjoxNjEzMzY1MTYxfQ.iKINk6lV7hLRhhWMnWyHgsIFbXamElFrLHoe9qip9-Y"
+            }
+        }
+        const res = await axios.post(`${BASE_URL}/api/books`,book,options);
+        console.log(res)
+    }
     useEffect(() => {
         M.AutoInit();
     }, []);
 
     return (
         <div className='container'>
-            <form action=''>
+            <form onSubmit={handleSubmit}>
                 <h3>Add New Book</h3>
                 <div className='input-field'>
-                    <input type='text' id='booktitle' />
+                    <input type='text' name="bookTitle" required />
                     <label
                         className='white-text'
                         style={{ fontSize: "20px" }}
@@ -23,7 +45,7 @@ const AddBook = () => {
           </label>
                 </div>
                 <div className='input-field'>
-                    <input type='text' id='authorname' />
+                    <input type='text' name="authorName" required/>
                     <label
                         className='white-text'
                         style={{ fontSize: "20px" }}
@@ -33,7 +55,7 @@ const AddBook = () => {
           </label>
                 </div>
                 <div className='input-field'>
-                    <input type='text' id='bookcode' />
+                    <input type='text' name='bookCode' required/>
                     <label
                         className='white-text'
                         style={{ fontSize: "20px" }}
@@ -43,7 +65,7 @@ const AddBook = () => {
                     </label>
                 </div>
                 {/* <div className='input-field'>
-                    <input type='text' id='category' />
+                    <input type='text' name='category' />
                     <label
                         className='white-text'
                         style={{ fontSize: "20px" }}
@@ -53,24 +75,24 @@ const AddBook = () => {
           </label>
                 </div> */}
                 <div class='input-field'>
-                    <select class='browser-deafault'>
+                    <select class='browser-deafault' name="category" required>
                         <option>Choose Category</option>
-                        <option value='1'>CSE</option>
-                        <option value='2'>EEE</option>
-                        <option value='3'>Textile</option>
-                        <option value='4'>Architecture</option>
-                        <option value='5'>Pharmacy</option>
-                        <option value='6'>BBA</option>
-                        <option value='7'>Economics</option>
-                        <option value='8'>English</option>
-                        <option value='9'>Bengali</option>
-                        <option value='10'>Religious</option>
-                        <option value='11'>Magazine</option>
-                        <option value='12'>Journal</option>
+                        <option value='CSE'>CSE</option>
+                        <option value='EEE'>EEE</option>
+                        <option value='Textile'>Textile</option>
+                        <option value='Architecture'>Architecture</option>
+                        <option value='Pharmacy'>Pharmacy</option>
+                        <option value='BBA'>BBA</option>
+                        <option value='Economics'>Economics</option>
+                        <option value='English'>English</option>
+                        <option value='Bengali'>Bengali</option>
+                        <option value='Religious'>Religious</option>
+                        <option value='Magazine'>Magazine</option>
+                        <option value='Journal'>Journal</option>
                     </select>
                 </div>
                 <div className='input-field'>
-                    <input type='text' id='quantity' />
+                    <input type='text' name='quantity' type='number' required/>
                     <label
                         className='white-text'
                         style={{ fontSize: "20px" }}
@@ -79,12 +101,13 @@ const AddBook = () => {
                         Quantity:
           </label>
                 </div>
-                <Link
+                <button
                     class='waves-effect waves-light btn-large green lighten-2'
-                    style={{ width: "50%", height: "70%", borderRadius: "10px" }}
+                    style={{ wnameth: "50%", height: "70%", borderRadius: "10px" }}
+                    type='submit'
                 >
                     Add Book
-        </Link>
+        </button>
             </form>
         </div>
     );

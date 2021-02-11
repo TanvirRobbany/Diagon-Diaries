@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useEffect,useState} from 'react';
 import user from '../../dummy/About/Picture/user.png';
 
+
 const Dashboard = () => {
+
     return (
         <div style={{ width: "100%", height: "100%" }}>
             <div className="col s12 m12 l6" style={{ paddingTop: "20%", paddingBottom: "20%", borderRadius: "10px" }}>

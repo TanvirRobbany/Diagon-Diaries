@@ -5,6 +5,7 @@ import AddBook from './AddBook';
 import Categories from './Categories';
 import BookIssued from './BookIssued';
 import { Link } from 'react-router-dom';
+import BookTableUser from '../Book Table/BookTableUser';
 
 const AdminPanel = () => {
     return (
@@ -26,6 +27,7 @@ const AdminPanel = () => {
                                 <Route exact path="/admindashboard" component={Dashboard} />
                                 <Route exact path="/adminaddbook" component={AddBook} />
                                 <Route exact path="/admincategories" component={Categories} />
+                                <Route exact path="/:id/books" render={()=><BookTableUser isAdmin={true}/>} />
                                 <Route exact path="/adminbookissued" component={BookIssued} />
                             </div>
                         </Switch>

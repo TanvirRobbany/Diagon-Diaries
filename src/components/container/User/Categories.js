@@ -9,7 +9,7 @@ const Categories = () => {
     <Router>
       <Switch>
         <Route exact path="/usercategories" component={CategoriesContainer} />
-        <Route exact path="/bookcategory" component={BookTableUser} />
+        <Route exact path="/bookcategory" component={BookTableUser} isAdmin={false}/>
       </Switch>
     </Router>
   );

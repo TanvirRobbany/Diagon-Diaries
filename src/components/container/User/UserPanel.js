@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Dashboard from './Dashboard';
 import Categories from './Categories';
 import BookBorrowed from './BookBorrowed';
+import BookTableUser from '../Book Table/BookTableUser';
 // import CategoriesContainer from '../Categories Container/CategoriesContainer';
 
 const UserPanel = () => {
@@ -24,6 +25,7 @@ const UserPanel = () => {
                                 <Route exact path="/userdashboard" component={Dashboard} />
                                 <Route exact path="/userbookborrowed" component={BookBorrowed} />
                                 <Route exact path="/usercategories" component={Categories} />
+                                <Route exact path="/:id/books" component={BookTableUser} />
                             </div>
                         </Switch>
                     </div>

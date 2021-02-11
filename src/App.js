@@ -13,8 +13,8 @@ import AdminPanel from "./components/container/Admin/AdminPanel";
 import UserPanel from "./components/container/User/UserPanel";
 
 function App() {
-  const [isLoggedIn] = useState(true);
-  const [isLoggedInAdmin] = useState(false);
+  const [isLoggedIn] = useState(false);
+  const [isLoggedInAdmin] = useState(true);
   return (
     <Router>
       {isLoggedInAdmin ? (
