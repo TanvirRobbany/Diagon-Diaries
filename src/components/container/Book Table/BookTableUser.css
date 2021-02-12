@@ -1,0 +1,7 @@
+.ReactModalPortal{
+    z-index: 1;
+}
+
+.ReactModal__Content--after-open {
+    background: rgb(130 117 117);
+}

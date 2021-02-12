@@ -1,6 +1,54 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { BASE_URL } from "../../../config/config";
+
 
 const Dashboard = () => {
+    const [allBookCount, setAllBookCount] = useState([]);
+    const [allIssuedBookCount, setAllIssuedBookCount] = useState([]);
+    const [allUserCount, setAllUserCount] = useState([]);
+
+    const getAllBookCount = async () => {
+        const options = {
+            headers: {
+                Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAwZjEzNmMyYjY0MDMyNzkwMzJlYjIxIn0sImlhdCI6MTYxMzA2NzU4MywiZXhwIjoxNjEzNDI3NTgzfQ.Pw8rbL7VJOPTzs_P-uPBDHHbmje4ll8wk8MA5Nvf71U"
+            }
+        }
+
+        const res = await axios.get(`${BASE_URL}/api/books`, options);
+        console.log(res.data);
+        setAllBookCount(res.data);
+    }
+
+    const getAllIssuedBookCount = async () => {
+        const options = {
+            headers: {
+                Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAwZjEzNmMyYjY0MDMyNzkwMzJlYjIxIn0sImlhdCI6MTYxMzA2NzU4MywiZXhwIjoxNjEzNDI3NTgzfQ.Pw8rbL7VJOPTzs_P-uPBDHHbmje4ll8wk8MA5Nvf71U"
+            }
+        }
+
+        const res = await axios.get(`${BASE_URL}/api/books/issue`, options);
+        console.log(res.data);
+        setAllIssuedBookCount(res.data);
+    }
+
+    const getAllUserCount = async () => {
+        const options = {
+            headers: {
+                Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAwZjEzNmMyYjY0MDMyNzkwMzJlYjIxIn0sImlhdCI6MTYxMzA2NzU4MywiZXhwIjoxNjEzNDI3NTgzfQ.Pw8rbL7VJOPTzs_P-uPBDHHbmje4ll8wk8MA5Nvf71U"
+            }
+        }
+
+        const res = await axios.get(`${BASE_URL}/api/users`, options);
+        console.log(res.data);
+        setAllUserCount(res.data);
+    }
+
+    useEffect(() => {
+        getAllBookCount();
+        getAllIssuedBookCount();
+        getAllUserCount();
+    }, [])
     return (
         <div style={{ width: "100%", height: "100%" }}>
             <div className="row" style={{ height: "340px" }}>
@@ -8,14 +56,14 @@ const Dashboard = () => {
                     <div className="waves-effect waves-light btn-large indigo lighten-2" style={{ width: "90%", height: "300px", fontSize: "25px", padding: "38px 0px 0px 0px", margin: "10px", borderRadius: "10px" }}>
                         <h4>Total Books</h4>
                         <br />
-                        <h3>2500</h3>
+                        <h3>{allBookCount.length}</h3>
                     </div>
                 </div>
                 <div className="col s12 m6 l6">
                     <div className="waves-effect waves-light btn-large purple lighten-2" style={{ width: "90%", height: "300px", fontSize: "25px", padding: "38px 0px 0px 0px", margin: "10px", borderRadius: "10px" }}>
                         <h4>Total Users</h4>
                         <br />
-                        <h3>5000</h3>
+                        <h3>{allUserCount.length}</h3>
                     </div>
                 </div>
 
@@ -33,7 +81,7 @@ const Dashboard = () => {
                     <div className="waves-effect waves-light btn-large indigo lighten-2" style={{ width: "90%", height: "300px", fontSize: "25px", padding: "38px 0px 0px 0px", margin: "10px", borderRadius: "10px" }}>
                         <h4>Books Borrowed</h4>
                         <br />
-                        <h3>500</h3>
+                        <h3>{allIssuedBookCount.length}</h3>
                     </div>
                 </div>
             </div>

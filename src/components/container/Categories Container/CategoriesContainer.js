@@ -10,7 +10,7 @@ const CategoriesContainer = () => {
             <div className='row' style={{ height: "150px" }}>
                 {categoryName.map((category,index) =>
                 //  {index== 0 || index===3 ||index ===6 || index===9  &&    <div className='row' style={{ height: "150px" }}> }
-                        <div className='col s12 m6 l4'>
+                        <div className='col s12 m6 l4' style={{marginBottom: "2rem"}}>
                             <Link to={`${category.name}/books`}
                                 className={`waves-effect waves-light btn-large ${category.color}`}
                                 style={{
@@ -32,17 +32,10 @@ const CategoriesContainer = () => {
 
                 )}
 
-                <div className='col s12 m6 l4 '>
-                </div>
-                {/* <div className="col s12 m6 l4">
-                    <Link className="waves-effect waves-light btn-large indigo darken-4" style={{ width: "100%", height: "125px", fontSize: "22px", padding: "38px 0px 0px 0px", margin: "10px", borderRadius: "10px" }}>Travel</Link>
+                {/* <div className='col s12 m6 l4 '>
                 </div> */}
+
             </div>
-            {/* <Switch>
-                <div className="col s12 m12 l9">
-                    <Route exact path="/bookcategory" component={BookTable} />
-                </div>
-            </Switch> */}
         </div>
     )
 }

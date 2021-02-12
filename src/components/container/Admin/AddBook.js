@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import M from "materialize-css";
-import { Button } from "@material-ui/core";
+// import { Button } from "@material-ui/core";
 import axios from "axios";
 import { BASE_URL } from "../../../config/config";
 
 const AddBook = ({isAdmin}) => {
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         console.log(e.target.bookTitle.name,e.target.bookTitle.value);
         const formData = e.target
         const book = {
@@ -20,7 +20,7 @@ const AddBook = ({isAdmin}) => {
         console.log(book);
         const options = {
             headers: {
-                Authorization:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAwZjEzNmMyYjY0MDMyNzkwMzJlYjIxIn0sImlhdCI6MTYxMzAwNTE2MSwiZXhwIjoxNjEzMzY1MTYxfQ.iKINk6lV7hLRhhWMnWyHgsIFbXamElFrLHoe9qip9-Y"
+                Authorization:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAwZjEzNmMyYjY0MDMyNzkwMzJlYjIxIn0sImlhdCI6MTYxMzA2NzU4MywiZXhwIjoxNjEzNDI3NTgzfQ.Pw8rbL7VJOPTzs_P-uPBDHHbmje4ll8wk8MA5Nvf71U"
             }
         }
         const res = await axios.post(`${BASE_URL}/api/books`,book,options);
