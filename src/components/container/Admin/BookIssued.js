@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
 import { BASE_URL } from "../../../config/config";
+import '../Book Table/BookTableUser.css'
 
 const BookIssued = ({ isAdmin }) => {
     const [issuedBookData, setIssuedBookData] = useState([]);
@@ -67,10 +68,14 @@ const BookIssued = ({ isAdmin }) => {
             <div className="col s12 m12 l7 blue-grey lighten-4" style={{ height: "700px", borderRadius: "10px", overflowY: "scroll" }}>
                 <h3>Issued Book List</h3>
                 <form action="">
-                    <div className="input-field">
-                        <input type="text" id="search" />
-                        <label className="black-text" style={{ fontSize: "20px" }} htmlFor="search">Search: </label>
-                    </div>
+                <div className="search-container">
+                        <div className="input-field">
+                            <input type="text" id="search" />
+                            <label className="black-text" style={{ fontSize: "20px" }} htmlFor="search">Search: </label>
+                        </div>
+                        <button className="waves-effect waves-light btn blue-grey lighten-2" style={{marginRight: "1rem"}}><i class="small material-icons">search</i></button>
+                        <button className="waves-effect waves-light btn blue-grey lighten-2" style={{marginRight: "1rem"}}><i class="small material-icons">arrow_back</i></button>
+                        </div>
                 </form>
                 <table className="centered highlight">
                     <thead>

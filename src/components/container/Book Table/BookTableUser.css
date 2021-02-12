@@ -5,3 +5,14 @@
 .ReactModal__Content--after-open {
     background: rgb(130 117 117);
 }
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-field {
+    width: 90%;
+    padding-right: 1rem;
+}

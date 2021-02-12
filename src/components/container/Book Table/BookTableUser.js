@@ -61,9 +61,13 @@ const BookTableUser = ({ match, isAdmin }) => {
                 <div className="col s12 m12 l12 blue-grey lighten-4" style={{ height: "700px", borderRadius: "10px", overflowY: "scroll" }}>
                     <h3>{page}</h3>
                     <form action="">
+                        <div className="search-container">
                         <div className="input-field">
                             <input type="text" id="search" />
                             <label className="black-text" style={{ fontSize: "20px" }} htmlFor="search">Search: </label>
+                        </div>
+                        <button className="waves-effect waves-light btn blue-grey lighten-2" style={{marginRight: "1rem"}}><i class="small material-icons">search</i></button>
+                        <button className="waves-effect waves-light btn blue-grey lighten-2" style={{marginRight: "1rem"}}><i class="small material-icons">arrow_back</i></button>
                         </div>
                     </form>
                     <table className="centered highlight">
@@ -72,6 +76,7 @@ const BookTableUser = ({ match, isAdmin }) => {
                                 <th>Book Code</th>
                                 <th>Book Name</th>
                                 <th>Author Name</th>
+                                <th>Quantity</th>
                                 {isAdmin && <th>Action</th>}
                             </tr>
                         </thead>
@@ -91,7 +96,7 @@ const BookTableUser = ({ match, isAdmin }) => {
                                     <td>{book.bookTitle}</td>
                                     <td>{book.authorName}</td>
                                     <td>{book.quantity}</td>
-                                    {isAdmin && <td><button className="waves-effect waves-light btn blue-grey lighten-2" onClick={() => editOnClick(book)}><i class="small material-icons">border_color</i></button><button onClick={() => deleteBook(book._id)} className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">delete</i></button></td>}
+                                    {isAdmin && <td><button className="waves-effect waves-light btn blue-grey lighten-2" onClick={() => editOnClick(book)} style={{marginRight: "1rem"}}><i class="small material-icons">border_color</i></button><button onClick={() => deleteBook(book._id)} className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">delete</i></button></td>}
 
                                 </tr>)}
                         </tbody>
