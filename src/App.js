@@ -5,7 +5,7 @@ import "./App.css";
 import Home from "./components/dummy/Home/Home";
 import Navbar from "./components/dummy/Navbar/Navbar";
 import HomeText from "./components/dummy/Home/HomeText";
-// import Footer from "./components/dummy/Footer/Footer";
+import Footer from "./components/dummy/Footer/Footer";
 import Login from "./components/container/Login/Login";
 import AboutUs from "./components/dummy/About/AboutUs";
 import Register from "./components/container/Register/Register";
@@ -13,8 +13,8 @@ import AdminPanel from "./components/container/Admin/AdminPanel";
 import UserPanel from "./components/container/User/UserPanel";
 
 function App() {
-  const [isLoggedIn] = useState(false);
-  const [isLoggedInAdmin] = useState(true);
+  const [isLoggedIn] = useState(true);
+  const [isLoggedInAdmin] = useState(false);
   return (
     <Router>
       {isLoggedInAdmin ? (
@@ -38,7 +38,7 @@ function App() {
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
             </Switch>
-            {/* <Footer /> */}
+            <Footer />
           </div>
         </div>
       )}

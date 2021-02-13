@@ -19,7 +19,7 @@ const Dashboard = () => {
                     <br />
                     <h5>Total Books Borrowed: 15</h5>
                     <h5>Currently Borrowed Books: 2</h5>
-                    <h5>Total Fine: 0 /=</h5>
+                    {/* <h5>Total Fine: 0 /=</h5> */}
                 </div>
             </div>
         </div>
