@@ -2,6 +2,7 @@ import React from "react";
 // import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {BASE_URL} from "../../../config/config";
+// import { withRouter } from 'react-router-dom';
 
 const Login = () => {
 
@@ -15,8 +16,12 @@ const Login = () => {
     console.log(login);
     const res = await axios.post(`${BASE_URL}/api/auth`,login);
     console.log(res);
-    // localStorage.setItem('token',res.data.token);
-    // localStorage.setItem('isAdmin',res.data.isAdmin);
+    const isAdmin = res.data.isAdmin;
+    window.localStorage.setItem('isAdmin',isAdmin);
+    window.localStorage.setItem('token',res.data.token);
+
+    // if( isAdmin ){history.push("/admin/panel")}
+    // else if (!isAdmin) {history.push("/user/panel")}
   }
 
   return (
