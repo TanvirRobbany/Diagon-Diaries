@@ -54,20 +54,42 @@ const BookTableUser = ({ match, isAdmin }) => {
         setBookData(res.data)
     }
 
+    const handleSearch = async (e) => {
+        e.preventDefault();
+        // console.log(e.target.bookTitle.name);
+        const formData = e.target
+        const searchedBook = {
+            query:formData.search.value,
+        }
+        console.log(searchedBook);
+        const options = {
+            headers: {
+                Authorization:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAwZjEzNmMyYjY0MDMyNzkwMzJlYjIxIn0sImlhdCI6MTYxMzA2NzU4MywiZXhwIjoxNjEzNDI3NTgzfQ.Pw8rbL7VJOPTzs_P-uPBDHHbmje4ll8wk8MA5Nvf71U"
+            }
+        }
+        const res = await axios.post(`${BASE_URL}/api/books/search`,searchedBook,options);
+        console.log(res);
+        setBookData(res.data);
+    }
+
+    const resetSearch = (e) => {
+        getBookData();
+    }
+
     return (
         <div className="col s12 m12 l12">
 
             <div style={{ width: "100%", height: "100%" }}>
                 <div className="col s12 m12 l12 blue-grey lighten-4" style={{ height: "700px", borderRadius: "10px", overflowY: "scroll" }}>
                     <h3>{page}</h3>
-                    <form action="">
+                    <form onSubmit={handleSearch}>
                         <div className="search-container">
                         <div className="input-field">
-                            <input type="text" id="search" />
+                            <input type="text" name="search" />
                             <label className="black-text" style={{ fontSize: "20px" }} htmlFor="search">Search: </label>
                         </div>
-                        <button className="waves-effect waves-light btn blue-grey lighten-2" style={{marginRight: "1rem"}}><i class="small material-icons">search</i></button>
-                        <button className="waves-effect waves-light btn blue-grey lighten-2" style={{marginRight: "1rem"}}><i class="small material-icons">arrow_back</i></button>
+                        <button type="submit" className="waves-effect waves-light btn blue-grey lighten-2" style={{marginRight: "1rem"}}><i class="small material-icons">search</i></button>
+                        <button onClick={resetSearch} className="waves-effect waves-light btn blue-grey lighten-2" style={{marginRight: "1rem"}}><i class="small material-icons">arrow_back</i></button>
                         </div>
                     </form>
                     <table className="centered highlight">
