@@ -25,11 +25,11 @@ const BookIssued = ({ isAdmin }) => {
         console.log(res);
     }
 
-    const removeIssue = async (id) =>{
+    const removeIssue = async (id) => {
         const res = await axios.delete(`${BASE_URL}/api/books/issue/${id}`)
         console.log(res);
         getIssuedBookData();
-    } 
+    }
 
     const getIssuedBookData = async () => {
         const options = {
@@ -111,20 +111,13 @@ const BookIssued = ({ isAdmin }) => {
                     </thead>
 
                     <tbody>
-                        {issuedBookData.map(issue => 
+                        {issuedBookData.map(issue =>
                             <tr>
                                 <td>{issue.bookID.bookCode}</td>
                                 <td>{issue.bookID.bookTitle}</td>
                                 <td>{issue.userID.studentID}</td>
-                                <td><button onClick={()=>removeIssue(issue._id)} className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">add_box</i></button></td>
+                                <td><button onClick={() => removeIssue(issue._id)} className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">add_box</i></button></td>
                             </tr>)}
-                        {/* <tr>
-                            <td>B-101</td>
-                            <td>Bengali book with a long Name very long Name very very long nameD</td>
-                            <td>2016100000151</td>
-                            <td>50 BDT</td>
-                            <td><Link className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">add_box</i></Link></td>
-                        </tr> */}
                     </tbody>
                 </table>
             </div>

@@ -8,8 +8,8 @@ const Categories = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/usercategories" component={CategoriesContainer} />
-        <Route exact path="/bookcategory" component={BookTableUser} isAdmin={false}/>
+        <Route exact path="/user/categories" component={CategoriesContainer} />
+        <Route exact path="/user/:id/books" component={BookTableUser} isAdmin={false}/>
       </Switch>
     </Router>
   );

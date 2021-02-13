@@ -17,31 +17,31 @@ function App() {
   const [isLoggedInAdmin] = useState(false);
   return (
     <Router>
-      {isLoggedInAdmin ? (
-        <div className='App'>
-          <Home />
-          <AdminPanel />
-        </div>
-      ) : isLoggedIn ? (
-        <div className='App'>
-          <Home />
-          <UserPanel />
-        </div>
-      ) : (
-        <div className='App'>
-          <Home />
-          <Navbar />
-          <div classname='home'>
-            <Switch>
-              <Route exact path='/' component={HomeText} />
-              <Route exact path='/aboutus' component={AboutUs} />
-              <Route exact path='/register' component={Register} />
-              <Route exact path='/login' component={Login} />
-            </Switch>
-            <Footer />
+      <Switch>
+        {isLoggedInAdmin ? (
+          <div className='App'>
+            <Home />
+            <AdminPanel />
           </div>
-        </div>
-      )}
+        ) : isLoggedIn ? (
+          <div className='App'>
+            <Home />
+            <UserPanel />
+          </div>
+        ) : (
+              <div className='App'>
+                <Home />
+                <Navbar />
+                <div classname='home'>
+                  <Route exact path='/' component={HomeText} />
+                  <Route exact path='/aboutus' component={AboutUs} />
+                  <Route exact path='/register' component={Register} />
+                  <Route exact path='/login' component={Login} />
+                  <Footer />
+                </div>
+              </div>
+            )}
+      </Switch>
     </Router>
   );
 }

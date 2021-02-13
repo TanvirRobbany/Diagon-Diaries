@@ -9,8 +9,8 @@ const Categories = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/admincategories" component={CategoriesContainer} />
-        <Route exact path="/:id/books" render={()=><BookTableUser isAdmin={true}/>} />
+        <Route exact path="/admin/categories" component={CategoriesContainer} />
+        <Route exact path="/admin/:id/books" render={()=><BookTableUser isAdmin={true}/>} />
       </Switch>
     </Router>
   );
