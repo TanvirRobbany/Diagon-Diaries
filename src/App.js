@@ -13,29 +13,32 @@ import AdminPanel from "./components/container/Admin/AdminPanel";
 import UserPanel from "./components/container/User/UserPanel";
 
 function App() {
-  const user = window.localStorage.getItem('isAdmin');
+  // const user = window.localStorage.getItem('isAdmin');
   
-  const [isLoggedIn] = useState(user);
-  const [isLoggedInAdmin] = useState(user);
+  const [isLoggedIn] = useState(false);
+  const [isLoggedInAdmin] = useState(true);
 
   return (
     <Router>
       <Switch>
+        <div className="App">
+      <Home />
+
         {isLoggedInAdmin ? (
           <div className='App'>
-            <Home />
+            {/* <Home /> */}
             {/* <Route exact path="/admin/panel" component={AdminPanel}/> */}
             <AdminPanel />
           </div>
         ) : isLoggedIn ? (
           <div className='App'>
-            <Home />
+            {/* <Home /> */}
             {/* <Route exact path="/user/panel" component={UserPanel}  /> */}
             <UserPanel />
           </div>
         ) : (
               <div className='App'>
-                <Home />
+                {/* <Home /> */}
                 <Navbar />
                 <div classname='home'>
                   <Route exact path='/' component={HomeText} />
@@ -46,6 +49,7 @@ function App() {
                 </div>
               </div>
             )}
+        </div>
       </Switch>
     </Router>
   );

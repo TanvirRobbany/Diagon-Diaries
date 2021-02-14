@@ -2,9 +2,9 @@ import React from "react";
 // import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {BASE_URL} from "../../../config/config";
-// import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({history}) => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -20,8 +20,8 @@ const Login = () => {
     window.localStorage.setItem('isAdmin',isAdmin);
     window.localStorage.setItem('token',res.data.token);
 
-    // if( isAdmin ){history.push("/admin/panel")}
-    // else if (!isAdmin) {history.push("/user/panel")}
+    if( isAdmin ){history.push("/admin/panel")}
+    else if (!isAdmin) {history.push("/user/panel")}
   }
 
   return (
