@@ -16,7 +16,7 @@ function App() {
   // const user = window.localStorage.getItem('isAdmin');
   
   const [isLoggedIn] = useState(false);
-  const [isLoggedInAdmin] = useState(false);
+  const [isLoggedInAdmin] = useState(true);
 
   return (
     <Router>

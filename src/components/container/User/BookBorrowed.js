@@ -5,12 +5,12 @@ const BookBorrowed = () => {
         <div style={{ width: "100%", height: "100%" }}>
             <div className="col s12 m12 l12 blue-grey lighten-4" style={{ height: "700px", borderRadius: "10px", overflowY: "scroll" }}>
                 <h3>Borrowed Book List</h3>
-                <form action="">
+                {/* <form action="">
                     <div className="input-field">
                         <input type="text" id="search" />
                         <label className="black-text" style={{ fontSize: "20px" }} htmlFor="search">Search: </label>
                     </div>
-                </form>
+                </form> */}
                 <table className="centered highlight">
                     <thead>
                         <tr>

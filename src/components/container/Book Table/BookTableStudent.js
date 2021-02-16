@@ -2,42 +2,41 @@ import axios from 'axios';
 import { BASE_URL } from '../../../config/config';
 import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
-import Modal from 'react-modal';
-import './BookTableUser.css';
+
 
 const BookTableUser = ({ match, isAdmin }) => {
-    console.log(match.params.id)
+    // console.log(match.params.id)
     const [bookData, setBookData] = useState([]);
-    const [editBook, setEditBook] = useState({});
-    const [page] = useState(match.params.id)
+    // const [editBook, setEditBook] = useState({});
+    // const [page] = useState(match.params.id)
     console.log(isAdmin);
-    const [modalIsOpen, setIsOpen] = useState(false);
+    // const [modalIsOpen, setIsOpen] = useState(false);
 
-    const editOnClick = (book) => {
-        setIsOpen(true);
-        setEditBook(book);
-    }
+    // const editOnClick = (book) => {
+    //     setIsOpen(true);
+    //     setEditBook(book);
+    // }
 
-    const exitEditOnClick = () => {
-        setIsOpen(false);
-        setEditBook({});
-    }
+    // const exitEditOnClick = () => {
+    //     setIsOpen(false);
+    //     setEditBook({});
+    // }
 
-    const handleEdit = async (e) => {
-        const options = {
-            headers: {
-                Authorization:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAyNzY0ODI2ODE1ZmIxNGE4ZTQ2OWQwIn0sImlhdCI6MTYxMzQ4MzYyMywiZXhwIjoxNjEzODQzNjIzfQ.giOu3BwnsGX5zUvfWym8zcErTbdowgWiySyAr_106c4"
-            }
-        }
-        const res = await axios.put(`${BASE_URL}/api/books/${editBook._id}`,editBook,options);
-        console.log(res)
-    }
+    // const handleEdit = async (e) => {
+    //     const options = {
+    //         headers: {
+    //             Authorization:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAyNzY0ODI2ODE1ZmIxNGE4ZTQ2OWQwIn0sImlhdCI6MTYxMzQ4MzYyMywiZXhwIjoxNjEzODQzNjIzfQ.giOu3BwnsGX5zUvfWym8zcErTbdowgWiySyAr_106c4"
+    //         }
+    //     }
+    //     const res = await axios.put(`${BASE_URL}/api/books/${editBook._id}`,editBook,options);
+    //     console.log(res)
+    // }
 
-    const deleteBook = async (id) => {
-        const res = await axios.delete(`${BASE_URL}/api/books/${id}`)
-        console.log(res);
-        getBookData();
-    }
+    // const deleteBook = async (id) => {
+    //     const res = await axios.delete(`${BASE_URL}/api/books/${id}`)
+    //     console.log(res);
+    //     getBookData();
+    // }
 
     useEffect(() => {
         getBookData();
@@ -81,7 +80,8 @@ const BookTableUser = ({ match, isAdmin }) => {
 
             <div style={{ width: "100%", height: "100%" }}>
                 <div className="col s12 m12 l12 blue-grey lighten-4" style={{ height: "700px", borderRadius: "10px", overflowY: "scroll" }}>
-                    <h3>{page}</h3>
+                    {/* <h3>{page}</h3> */}
+                    <h3>BOOKS</h3>
                     <form onSubmit={handleSearch}>
                         <div className="search-container">
                         <div className="input-field">
@@ -95,11 +95,11 @@ const BookTableUser = ({ match, isAdmin }) => {
                     <table className="centered highlight">
                         <thead>
                             <tr>
-                                <th>Book Code</th>
+                                <th>Book Code Student</th>
                                 <th>Book Name</th>
                                 <th>Author Name</th>
                                 <th>Quantity</th>
-                                {isAdmin && <th>Action</th>}
+                                {/* {isAdmin && <th>Action</th>} */}
                             </tr>
                         </thead>
 
@@ -112,20 +112,20 @@ const BookTableUser = ({ match, isAdmin }) => {
                             {/* <td><Link className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">border_color</i></Link><Link className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">delete</i></Link></td> */}
                             {/* </tr> */}
                             {bookData.map(book =>
-                                book.category === page &&
+                                // book.category === page &&
                                 <tr>
                                     <td>{book.bookCode}</td>
                                     <td>{book.bookTitle}</td>
                                     <td>{book.authorName}</td>
                                     <td>{book.quantity}</td>
-                                    {isAdmin && <td><button className="waves-effect waves-light btn blue-grey lighten-2" onClick={() => editOnClick(book)} style={{marginRight: "1rem"}}><i class="small material-icons">border_color</i></button><button onClick={() => deleteBook(book._id)} className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">delete</i></button></td>}
+                                    {/* {isAdmin && <td><button className="waves-effect waves-light btn blue-grey lighten-2" onClick={() => editOnClick(book)} style={{marginRight: "1rem"}}><i class="small material-icons">border_color</i></button><button onClick={() => deleteBook(book._id)} className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">delete</i></button></td>} */}
 
                                 </tr>)}
                         </tbody>
                     </table>
                 </div>
             </div>
-            <Modal isOpen={modalIsOpen}
+            {/* <Modal isOpen={modalIsOpen}
                 onRequestClose={() => exitEditOnClick()}>
                 <center>
                     <form onSubmit={handleEdit}>
@@ -178,9 +178,8 @@ const BookTableUser = ({ match, isAdmin }) => {
         </button>
                     </form>
                 </center>
-            </Modal>
+            </Modal> */}
         </div>
     )
 }
-
 export default withRouter(BookTableUser);

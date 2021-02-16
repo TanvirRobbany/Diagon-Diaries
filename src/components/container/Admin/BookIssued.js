@@ -18,15 +18,15 @@ const BookIssued = ({ isAdmin }) => {
         console.log(issuedBook);
         const options = {
             headers: {
-                Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAwZjEzNmMyYjY0MDMyNzkwMzJlYjIxIn0sImlhdCI6MTYxMzA2NzU4MywiZXhwIjoxNjEzNDI3NTgzfQ.Pw8rbL7VJOPTzs_P-uPBDHHbmje4ll8wk8MA5Nvf71U"
+                Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAyNzY0ODI2ODE1ZmIxNGE4ZTQ2OWQwIn0sImlhdCI6MTYxMzQ4MzYyMywiZXhwIjoxNjEzODQzNjIzfQ.giOu3BwnsGX5zUvfWym8zcErTbdowgWiySyAr_106c4"
             }
         }
         const res = await axios.post(`${BASE_URL}/api/books/issue`, issuedBook, options);
         console.log(res);
     }
 
-    const removeIssue = async (id) => {
-        const res = await axios.delete(`${BASE_URL}/api/books/issue/${id}`)
+    const updateIssue = async (id) => {
+        const res = await axios.put(`${BASE_URL}/api/books/issue/${id}`)
         console.log(res);
         getIssuedBookData();
     }
@@ -34,7 +34,7 @@ const BookIssued = ({ isAdmin }) => {
     const getIssuedBookData = async () => {
         const options = {
             headers: {
-                Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAwZjEzNmMyYjY0MDMyNzkwMzJlYjIxIn0sImlhdCI6MTYxMzA2NzU4MywiZXhwIjoxNjEzNDI3NTgzfQ.Pw8rbL7VJOPTzs_P-uPBDHHbmje4ll8wk8MA5Nvf71U"
+                Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAyNzY0ODI2ODE1ZmIxNGE4ZTQ2OWQwIn0sImlhdCI6MTYxMzQ4MzYyMywiZXhwIjoxNjEzODQzNjIzfQ.giOu3BwnsGX5zUvfWym8zcErTbdowgWiySyAr_106c4"
             }
         }
 
@@ -116,7 +116,7 @@ const BookIssued = ({ isAdmin }) => {
                                 <td>{issue.bookID.bookCode}</td>
                                 <td>{issue.bookID.bookTitle}</td>
                                 <td>{issue.userID.studentID}</td>
-                                <td><button onClick={() => removeIssue(issue._id)} className="waves-effect waves-light btn blue-grey lighten-2"><i class="small material-icons">add_box</i></button></td>
+                                <td><button onClick={() => updateIssue(issue._id)} className={`waves-effect waves-light btn ${issue.isReceived ? 'green' : 'red'}`}><i class="small material-icons">add_box</i></button></td>
                             </tr>)}
                     </tbody>
                 </table>

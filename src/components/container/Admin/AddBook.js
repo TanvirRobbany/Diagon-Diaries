@@ -20,7 +20,7 @@ const AddBook = ({isAdmin}) => {
         console.log(book);
         const options = {
             headers: {
-                Authorization:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAwZjEzNmMyYjY0MDMyNzkwMzJlYjIxIn0sImlhdCI6MTYxMzA2NzU4MywiZXhwIjoxNjEzNDI3NTgzfQ.Pw8rbL7VJOPTzs_P-uPBDHHbmje4ll8wk8MA5Nvf71U"
+                Authorization:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAyNzY0ODI2ODE1ZmIxNGE4ZTQ2OWQwIn0sImlhdCI6MTYxMzQ4MzYyMywiZXhwIjoxNjEzODQzNjIzfQ.giOu3BwnsGX5zUvfWym8zcErTbdowgWiySyAr_106c4"
             }
         }
         const res = await axios.post(`${BASE_URL}/api/books`,book,options);
@@ -77,7 +77,10 @@ const AddBook = ({isAdmin}) => {
                 <div class='input-field'>
                     <select class='browser-deafault' name="category" required>
                         <option>Choose Category</option>
-                        <option value='CSE'>CSE</option>
+                        <option value='SCIENCE'>SCIENCE</option>
+                        <option value='COMMERCE'>COMMERCE</option>
+                        <option value='ARTS'>ARTS</option>
+                        {/* <option value='CSE'>CSE</option>
                         <option value='EEE'>EEE</option>
                         <option value='Textile'>Textile</option>
                         <option value='Architecture'>Architecture</option>
@@ -88,7 +91,7 @@ const AddBook = ({isAdmin}) => {
                         <option value='Bengali'>Bengali</option>
                         <option value='Religious'>Religious</option>
                         <option value='Magazine'>Magazine</option>
-                        <option value='Journal'>Journal</option>
+                        <option value='Journal'>Journal</option> */}
                     </select>
                 </div>
                 <div className='input-field'>

@@ -8,7 +8,7 @@ const CategoriesContainer = () => {
 
             <div className='row' style={{ height: "150px" }}>
                 {categoryName.map((category, index) =>
-                    <div className='col s12 m6 l4' style={{ marginBottom: "2rem" }}>
+                    <div className='col s12 m12 l12' style={{ marginBottom: "8rem" }}>
                         <Link to={`${category.name}/books`}
                             className={`waves-effect waves-light btn-large ${category.color}`}
                             style={{
