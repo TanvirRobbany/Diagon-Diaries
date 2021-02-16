@@ -15,8 +15,8 @@ import UserPanel from "./components/container/User/UserPanel";
 function App() {
   // const user = window.localStorage.getItem('isAdmin');
   
-  const [isLoggedIn] = useState(false);
-  const [isLoggedInAdmin] = useState(true);
+  const [isLoggedIn] = useState(true);
+  const [isLoggedInAdmin] = useState(false);
 
   return (
     <Router>

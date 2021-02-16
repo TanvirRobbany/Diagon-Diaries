@@ -23,12 +23,16 @@ const BookIssued = ({ isAdmin }) => {
         }
         const res = await axios.post(`${BASE_URL}/api/books/issue`, issuedBook, options);
         console.log(res);
+        // setTimeout(() => {alert("Book Issued")}, 100)
+        getIssuedBookData();
+
     }
 
     const updateIssue = async (id) => {
         const res = await axios.put(`${BASE_URL}/api/books/issue/${id}`)
         console.log(res);
         getIssuedBookData();
+        // setTimeout(() => {alert("Book Received")}, 1000)
     }
 
     const getIssuedBookData = async () => {
