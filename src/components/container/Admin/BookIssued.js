@@ -116,7 +116,7 @@ const BookIssued = ({ isAdmin }) => {
                                 <td>{issue.bookID.bookCode}</td>
                                 <td>{issue.bookID.bookTitle}</td>
                                 <td>{issue.userID.studentID}</td>
-                                <td><button onClick={() => updateIssue(issue._id)} className={`waves-effect waves-light btn ${issue.isReceived ? 'green' : 'red'}`}><i class="small material-icons">add_box</i></button></td>
+                                <td><button onClick={() => updateIssue(issue._id)} className={`waves-effect waves-light btn ${issue.isReceived ? 'disabled' : 'green'}`}><i class="small material-icons">add_box</i></button></td>
                             </tr>)}
                     </tbody>
                 </table>
