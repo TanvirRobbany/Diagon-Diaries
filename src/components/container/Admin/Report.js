@@ -1,3 +1,4 @@
+import { Divider } from '@material-ui/core';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { CSVLink, CSVDownload } from "react-csv";
@@ -17,15 +18,15 @@ const Report = () => {
         const res = await axios.get(`${BASE_URL}/api/books/issue`, options);
         console.log(res.data)
         setIssuedBookData(res.data)
-    //    const newData =  issuedBookData.map(data => {
-    //         return [data.bookID.bookCode,data.bookID.bookTitle];
-    //         setNewData2([newData2,])
-    //     })
+        //    const newData =  issuedBookData.map(data => {
+        //         return [data.bookID.bookCode,data.bookID.bookTitle];
+        //         setNewData2([newData2,])
+        //     })
         // setNewData2(newData);
     }
 
-    const data =      issuedBookData.map(data=>
-        [data.bookID.bookCode,data.bookID.bookTitle,data.userID.studentID,data.isReceived, data.receivedDate])
+    const data = issuedBookData.map(data =>
+        [data.bookID.bookCode, data.bookID.bookTitle, data.userID.studentID, data.isReceived, data.receivedDate])
 
     useEffect(() => {
         getIssuedBookData();
@@ -33,10 +34,12 @@ const Report = () => {
     console.log(newData2)
     const csvData = [
         ["Book Code", "Book Title", "Student ID", "Received", "Date"],
-   ...data
-      ]
+        ...data
+    ]
     return (
-        <CSVLink data={csvData}>Download me</CSVLink>
+        <div style={{ width: "100%", height: "100%", padding: "200px"}}>
+            <CSVLink style={{fontSize: "3em", color:"#ffffff"}} data={csvData}><b>Download Report</b></CSVLink>
+        </div>
     );
 }
 export default Report;
