@@ -16,15 +16,21 @@ const BookIssued = ({ isAdmin }) => {
             userID: formData.userID.value
         }
         console.log(issuedBook);
-        const options = {
-            headers: {
-                Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAyNzY0ODI2ODE1ZmIxNGE4ZTQ2OWQwIn0sImlhdCI6MTYxMzQ4MzYyMywiZXhwIjoxNjEzODQzNjIzfQ.giOu3BwnsGX5zUvfWym8zcErTbdowgWiySyAr_106c4"
+        try {            
+            const options = {
+                headers: {
+                    Authorization: window.localStorage.getItem("token")    
+                }
+            }
+            const res = await axios.post(`${BASE_URL}/api/books/issue`, issuedBook, options);
+            console.log(res);
+            // setTimeout(() => {alert("Book Issued")}, 100)
+            getIssuedBookData();
+        } catch (error) {
+            if(error.response.status === 400) {
+                alert("Book is not available")
             }
         }
-        const res = await axios.post(`${BASE_URL}/api/books/issue`, issuedBook, options);
-        console.log(res);
-        // setTimeout(() => {alert("Book Issued")}, 100)
-        getIssuedBookData();
 
     }
 
@@ -38,7 +44,7 @@ const BookIssued = ({ isAdmin }) => {
     const getIssuedBookData = async () => {
         const options = {
             headers: {
-                Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAyNzY0ODI2ODE1ZmIxNGE4ZTQ2OWQwIn0sImlhdCI6MTYxMzQ4MzYyMywiZXhwIjoxNjEzODQzNjIzfQ.giOu3BwnsGX5zUvfWym8zcErTbdowgWiySyAr_106c4"
+                Authorization: window.localStorage.getItem("token")
             }
         }
 

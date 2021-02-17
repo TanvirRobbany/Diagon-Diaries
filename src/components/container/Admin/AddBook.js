@@ -18,13 +18,18 @@ const AddBook = ({isAdmin}) => {
             quantity:formData.quantity.value
         }
         console.log(book);
-        const options = {
-            headers: {
-                Authorization:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAyNzY0ODI2ODE1ZmIxNGE4ZTQ2OWQwIn0sImlhdCI6MTYxMzQ4MzYyMywiZXhwIjoxNjEzODQzNjIzfQ.giOu3BwnsGX5zUvfWym8zcErTbdowgWiySyAr_106c4"
+        try {     
+            const options = {
+                headers: {
+                    Authorization: window.localStorage.getItem("token")
+                }
             }
+            const res = await axios.post(`${BASE_URL}/api/books`,book,options);
+            console.log(res);
+            window.location.reload();
+        } catch (error) {
+            console.log(error)
         }
-        const res = await axios.post(`${BASE_URL}/api/books`,book,options);
-        console.log(res)
     }
     useEffect(() => {
         M.AutoInit();

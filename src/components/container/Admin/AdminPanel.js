@@ -8,8 +8,11 @@ import { Link } from 'react-router-dom';
 import BookTableUser from '../Book Table/BookTableUser';
 
 const AdminPanel = () => {
+    const handleLogout = () => {
+        window.localStorage.clear();
+        window.location.reload();
+    }
     return (
-        <Router>
             <Fragment>
                 <div className="container" style={{marginBottom: "25px"}}>
                     <div className="row" style={{ height: "700px",}}>
@@ -20,7 +23,7 @@ const AdminPanel = () => {
                             <Link to="/admin/categories" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Book Categories</Link>
                             <Link to="/admin/bookissued" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Book Borrowed</Link>
                             {/* <Link className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Report</Link> */}
-                            <Link className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Logout</Link>
+                            <button onClick={handleLogout} className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Logout</button>
                         </div>
                         <Switch>
                             <div className="col s12 m12 l9">
@@ -34,7 +37,6 @@ const AdminPanel = () => {
                     </div>
                 </div>
             </Fragment>
-        </Router >
     )
 }
 

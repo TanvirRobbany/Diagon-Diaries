@@ -1,6 +1,7 @@
 import React from "react";
 // import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Navbar from '../../dummy/Navbar/Navbar';
 import {BASE_URL} from "../../../config/config";
 
 const Register = ({history}) => {
@@ -39,6 +40,8 @@ const Register = ({history}) => {
   }
 
   return (
+    <>
+    <Navbar/>
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className='row'>
         <form className='col s12' onSubmit={handleRegister}>
@@ -72,6 +75,7 @@ const Register = ({history}) => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 

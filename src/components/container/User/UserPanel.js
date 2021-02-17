@@ -9,6 +9,10 @@ import BookTableStudent from '../Book Table/BookTableStudent';
 // import CategoriesContainer from '../Categories Container/CategoriesContainer';
 
 const UserPanel = () => {
+    const handleLogout = () => {
+        window.localStorage.clear();
+        window.location.reload();
+    }
     return (
         <Router>
             <Fragment>
@@ -20,7 +24,7 @@ const UserPanel = () => {
                             {/* <Link to="/user/categories" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Book Categories</Link> */}
                             <Link to="/user/books" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Books</Link>
                             <Link to="/user/bookborrowed" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Book Borrowed</Link>
-                            <Link className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Logout</Link>
+                            <button onClick={handleLogout} className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Logout</button>
                         </div>
                         <Switch>
                             <div className="col s12 m12 l9">                    

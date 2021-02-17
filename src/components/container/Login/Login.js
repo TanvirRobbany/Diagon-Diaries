@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {BASE_URL} from "../../../config/config";
-import { withRouter } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
+import Navbar from '../../dummy/Navbar/Navbar';
+
 
 const Login = ({history}) => {
 
+
+  const [isAdmin,setIsAdmin]=useState(null)
   const handleLogin = async (e) => {
     e.preventDefault();
     const formData = e.target;
@@ -14,17 +18,38 @@ const Login = ({history}) => {
       password: formData.password.value
     }
     console.log(login);
-    const res = await axios.post(`${BASE_URL}/api/auth`,login);
-    console.log(res);
-    const isAdmin = res.data.isAdmin;
-    window.localStorage.setItem('isAdmin',isAdmin);
-    window.localStorage.setItem('token',res.data.token);
+    try {
+      const res = await axios.post(`${BASE_URL}/api/auth`,login);
+      console.log(res);
+      setIsAdmin(res.data.isAdmin);
+      window.localStorage.setItem('isAdmin',res.data.isAdmin);
+      window.localStorage.setItem('token',res.data.token);
+      window.localStorage.setItem('userID',res.data.userID)
+      window.localStorage.setItem('userName',res.data.userName)
+      window.localStorage.setItem('userId',res.data.userId)
+      // setTimeout(() => {
+        
+      // }, 10000);
 
-    if( isAdmin ){history.push("/admin/panel")}
-    else if (!isAdmin) {history.push("/user/panel")}
+    } catch (error) {
+      alert("Login Failed")
+    }
   }
 
+  useEffect(()=>{
+    if(isAdmin!==null){
+      // setTimeout(() => {
+        if( isAdmin ){history.push("/admin/panel");window.location.reload();}
+        else {history.push("/user/panel");window.location.reload();}
+      // }, 5000);
+  
+    }
+  },[isAdmin])
+
   return (
+    <>
+    {/* {isAdmin === true  && <Redirect to={'/admin/panel'}/>} */}
+    <Navbar/>
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className='row'>
         <form className='col s12' onSubmit={handleLogin}>
@@ -46,6 +71,7 @@ const Login = ({history}) => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 

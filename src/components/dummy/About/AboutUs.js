@@ -1,10 +1,13 @@
 import React from "react";
+import Navbar from '../Navbar/Navbar';
 import tanvir from "./Picture/tanvir.jpg";
 import towhid from "./Picture/towhid.jpg";
 import nila from "./Picture/nila.jpg";
 
 const AboutUs = () => {
   return (
+    <>
+    <Navbar/>
     <div
       style={{
         display: "flex",
@@ -82,6 +85,7 @@ const AboutUs = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
