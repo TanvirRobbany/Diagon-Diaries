@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import AddBook from './AddBook';
 import Categories from './Categories';
 import BookIssued from './BookIssued';
-import { Link } from 'react-router-dom';
 import BookTableUser from '../Book Table/BookTableUser';
+import Report from './Report'
 
 const AdminPanel = () => {
     const handleLogout = () => {
@@ -22,7 +23,7 @@ const AdminPanel = () => {
                             <Link to="/admin/addbook" className="waves-effect waves-light btn-large blue-grey black-text lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Add Book</Link>
                             <Link to="/admin/categories" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Book Categories</Link>
                             <Link to="/admin/bookissued" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Book Borrowed</Link>
-                            {/* <Link className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Report</Link> */}
+                            <Link to="/admin/report" className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Report</Link>
                             <button onClick={handleLogout} className="waves-effect waves-light btn-large black-text blue-grey lighten-2" style={{ width: "90%", fontSize: "20px", borderRadius: "10px", padding: "0" }}>Logout</button>
                         </div>
                         <Switch>
@@ -32,6 +33,7 @@ const AdminPanel = () => {
                                 <Route exact path="/admin/categories" component={Categories} />
                                 <Route exact path="/admin/:id/books" render={()=><BookTableUser isAdmin={true}/>} />
                                 <Route exact path="/admin/bookissued" component={BookIssued} />
+                                <Route exact path="/admin/report" component={Report} />
                             </div>
                         </Switch>
                     </div>
