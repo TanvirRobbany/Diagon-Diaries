@@ -7,7 +7,7 @@ import {BASE_URL} from "../../../config/config";
 const Register = ({history}) => {
 
   const handleRegister = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     try {
     const formData = e.target;
     const user = {

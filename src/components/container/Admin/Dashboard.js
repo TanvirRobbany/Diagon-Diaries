@@ -74,7 +74,7 @@ const Dashboard = () => {
                     <div className="waves-effect waves-light btn-large purple lighten-2" style={{ width: "90%", height: "300px", fontSize: "25px", padding: "38px 0px 0px 0px", margin: "10px", borderRadius: "10px" }}>
                         <h4>Categories</h4>
                         <br />
-                        <h3>16</h3>
+                        <h3>3</h3>
                     </div>
                 </div>
                 <div className="col s12 m6 l6">

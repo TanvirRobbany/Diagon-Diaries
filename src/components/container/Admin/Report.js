@@ -26,7 +26,7 @@ const Report = () => {
     }
 
     const data = issuedBookData.map(data =>
-        [data.bookID.bookCode, data.bookID.bookTitle, data.userID.studentID, data.isReceived, data.receivedDate])
+        [data.bookID.bookCode, data.bookID.bookTitle, data.userID.studentID, data.isRec, data.receivedDate])
 
     useEffect(() => {
         getIssuedBookData();
