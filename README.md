@@ -1,4 +1,5 @@
-###Diagon Diaries
+##Diagon Diaries
+
 Diagon Diaries is Library Management System developed with React, Node, Express, MongoDB and REST API
 It has some features like:
 1. User Registration
@@ -11,6 +12,14 @@ It has some features like:
 
 
 You can download or clone the project and run "npm install" to install the dependendies.
+
 **You also have to download the Diagon Diaries API repository to experince the full fucntionality.
 
+## Project setup
+```
+npm install
+```
 
+### Compiles and hot-reloads for development
+```
+npm start
