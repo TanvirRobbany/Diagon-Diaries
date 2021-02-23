@@ -11,9 +11,7 @@ It has some features like:
 7. User can also view the current issued book to him/her.
 
 
-You can download or clone the project and run "npm install" to install the dependendies.
-
-**You also have to download the Diagon Diaries API repository to experince the full fucntionality.
+*You also have to download the Diagon Diaries API repository to experince the full fucntionality.
 
 ## Project setup
 ```
