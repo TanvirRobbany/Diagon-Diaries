@@ -1,4 +1,4 @@
-##Diagon Diaries
+## Diagon Diaries
 
 Diagon Diaries is Library Management System developed with React, Node, Express, MongoDB and REST API
 It has some features like:
